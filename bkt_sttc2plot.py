@@ -24,8 +24,8 @@ def pos_plot(long_data,factor_type,factor_num,plt_show = 0,path = "./gp_rslt/"):
     fig,ax = plt.subplots(figsize = (20,10))
     ax.plot(long_data['value_with_comm'], label = "策略收益", c='tab:orange',lw = 2)
     ax.plot(long_data['open']/long_data['open'][0], label = "Buy and Hold", c='tab:blue',lw = 2)
-    ax.legend() 
-    ax.grid() 
+    ax.legend()
+    ax.grid()
     ax.set_xlabel('时间', fontsize = 30)
     ax.set_ylabel('账户价值', fontsize = 30)
     ax.legend(fontsize = 25,loc = 'best')
@@ -37,7 +37,7 @@ def mxdd_plot(long_data,factor_type,factor_num,plt_show = 0,path = "./gp_rslt/")
     maxdd = long_data['value_with_comm']/long_data['value_with_comm'].cummax()-1
     fig, ax = plt.subplots(figsize=(20, 10))
     ax.plot(maxdd, label = "最大回撤比率", c='tab:purple',lw = 2)
-    ax.grid() 
+    ax.grid()
     ax.set_xlabel('时间', fontsize = 30)
     ax.set_ylabel('账户价值', fontsize = 30)
     ax.legend(fontsize = 25,loc = 'best')
@@ -71,7 +71,7 @@ def per_time_plot(long_data,factor_type,factor_num,plt_show = 0,path = "./gp_rsl
     pos_analysis = long_data.dropna()
     Time_Num = pos_analysis['DateTime'].apply(lambda t: pd.Timestamp(t).time()).value_counts()
 
-    fig, ax = plt.subplots(figsize=(20, 10))
+    fig, ax = plt.subplots(figsize=(10, 10))
     hist_x = [str(x) for x in Time_Num.index]
     hist_y = Time_Num.values
     ax.bar(hist_x, hist_y)

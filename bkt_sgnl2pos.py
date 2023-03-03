@@ -19,7 +19,7 @@ def sgnl2pos(sgnl_input, start_time = '09:30:00', end_time = '15:00:00',shift_pe
     sgnl = np.sign(sgnl_input[['sgnl']])
     pos_open_t = pd.Timestamp(start_time).time() # 设置不交易的时间，将信号归零
     pos_end_t = pd.Timestamp(end_time).time()
-    sgnl.index = pd.to_datetime(sgnl_input['DateTime']) 
+    sgnl.index = pd.to_datetime(sgnl_input['DateTime'])
     sgnl.loc[:,'Date'] = sgnl.index.date
     sgnl.loc[:,'Time'] = sgnl.index.time
     sgnl.loc[(sgnl['Time'] <= pos_open_t) | (sgnl['Time'] >= pos_end_t),'sgnl'] = np.nan

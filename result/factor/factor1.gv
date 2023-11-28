@@ -1,0 +1,20 @@
+digraph program {
+node [style=filled]
+0 [label="sub", fillcolor="#136ed4"] ;
+1 [label="sub", fillcolor="#136ed4"] ;
+2 [label="Close", fillcolor="#60a6f6"] ;
+3 [label="min", fillcolor="#136ed4"] ;
+4 [label="Low", fillcolor="#60a6f6"] ;
+5 [label="Low", fillcolor="#60a6f6"] ;
+3 -> 5 ;
+3 -> 4 ;
+1 -> 3 ;
+1 -> 2 ;
+6 [label="sub", fillcolor="#136ed4"] ;
+7 [label="High", fillcolor="#60a6f6"] ;
+8 [label="Open", fillcolor="#60a6f6"] ;
+6 -> 8 ;
+6 -> 7 ;
+0 -> 6 ;
+0 -> 1 ;
+}

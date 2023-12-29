@@ -6,6 +6,7 @@
 本文档将说明各文件作用，如何使用本项目以及成果展示。如果希望进一步了解遗传算法的理论内容，可以参考`遗传算法实证思路梳理.pdf`
 <!-- 在适应度函数定义方面，本文档采用收益回撤比进行定义。如何根据遗传规划算法得到因子值投资的细节参见simple-backtest项目。   -->
 
+关于如何回测，新增了`factor_test.py`，可以快速进行多因子回测。对于主流回测框架的梳理，我目前发布在[https://wjsbjl.github.io/simple-backtest/](https://wjsbjl.github.io/simple-backtest/)，欢迎交流讨论
 ## 主要文档说明
 * `gplearn`
   * `functions.py` 加了自己的函数
@@ -16,6 +17,7 @@
   * `setupGPlearn.py` 设定gplearn
   * `IC.py` 计算IC
   * `my_plot.py` 画图的类
+  * `factor_test.py` 向量化执行多因子回测,可以结合demo放到`stock_selection_factor.py`里    
 * `遗传算法实证思路梳理.pdf` 梳理遗传算法实证思路和本项目基本设定
 * `timing_factor.py` 生成时序因子。这里通过收益/回撤的比值来刻画因子好坏，没考虑手续费，生成的因子结果还不错  
 * `stock_selection_factor.py` 生成截面因子。这里通过`fadj_close`计算收益，可以换成`vwap`
